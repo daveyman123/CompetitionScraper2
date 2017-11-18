@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+   <head>
+      <title>{{ title }}</title>
+   </head>
+
+   <body>
+      <h1>Competition Scraper</h1>
+      <h2>The date and time on the server is: {{ time }}</h2>
+	
+   </body>
+</html>
+<html>
+                   <head>
+                      <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+                      <script>
+                           $(document).ready(function(){
+
+                                $('#btnSend').click(function(){
+				    $('#text_box').text("Scraping Now...")
+                                    $.ajax({
+                                      type: 'POST',
+                                      url: '/lemay',
+                                      success: function(data){
+                                        alert(data);
+					$('#text_box').text("Email Sent")
+                                      }
+                                    });
+                                });
+				$('#btnSend2').click(function(){
+				    $('#text_box').text("Scraping Now...")
+                                    $.ajax({
+                                      type: 'POST',
+                                      url: '/caveSprings',
+                                      success: function(data){
+                                        alert(data);
+					$('#text_box').text("Email Sent")
+                                      }
+                                    });
+                                });
+
+                           });
+                      </script>
+                   </head>
+                   <body>
+                    <input type="button" id="btnSend" value="lemay">
+		    <input type="button" id="btnSend2" value="Cave Springs">
+
+<p id="text_box"></p>
+                    </body>
+                   </html>
+
